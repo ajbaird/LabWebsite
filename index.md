@@ -15,7 +15,7 @@ We aim to leverage a variety of mathematical modeling techniques to simulate the
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Explore our work! 
 
 {%
   include button.html
@@ -55,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   include feature.html
   image="images/photo.jpg"
   link="projects"
-  title="Our Projects"
+  title="Open Source Tools"
   flip=true
   style="bare"
   text=text
