@@ -1,9 +1,9 @@
 # site properties and page defaults
 title: Baird Lab
-subtitle: Computational Physiolgy 
-description: An engaging 1-3 sentence description of your lab.
-header: images/background.jpg
-footer: images/background.jpg
+subtitle: Computational Physiology 
+description: Modeling + Data + Computation 
+header: images/rainier.jpg
+footer: images/rainier.jpg
 
 # site social media and other links
 links:
