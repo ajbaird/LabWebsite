@@ -1,9 +1,9 @@
 ---
 ---
 
-# ajbaird's Website
+# Computational Physiology Models for Healthcare Simulation
 
-An engaging 1-3 sentence description of your lab.
+OUr lab is the BEST.
 
 {% include section.html %}
 
@@ -26,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/overview.png"
   link="research"
   title="Our Research"
   text=text
