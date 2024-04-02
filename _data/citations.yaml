@@ -68,6 +68,36 @@
   orcid: 0000-0002-4711-3016
   plugin: orcid.py
   file: orcid.yaml
+- id: doi:10.3390/biomedinformatics1030009
+  title: Detecting Patient Health Trajectories Using a Full-Body Burn Physiology Model
+  authors:
+  - Austin Baird
+  - Adam Amos-Binks
+  - Nathan Tatum
+  - Steven White
+  - Matthew Hackett
+  - Maria Serio-Melvin
+  publisher: BioMedInformatics
+  date: '2021-11-02'
+  link: https://doi.org/gqcqv2
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
+- id: doi:10.3934/mbe.2021161
+  title: A multiscale computational model of angiogenesis after traumatic brain injury,
+    investigating the role location plays in volumetric recovery
+  authors:
+  - Austin Baird
+  - Laura Oelsner
+  - Charles Fisher
+  - Matt Witte
+  - My Huynh
+  publisher: Mathematical Biosciences and Engineering
+  date: '2021-01-01'
+  link: https://doi.org/gtpxsw
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.21105/joss.02645
   title: 'BioGears: A C++ library for whole body physiology simulations'
   authors:
@@ -96,6 +126,72 @@
   publisher: BMC Emergency Medicine
   date: '2020-10-30'
   link: https://doi.org/gtmsst
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
+- id: doi:10.1109/embc.2019.8857686
+  title: A Full-Body Model of Burn Pathophysiology and Treatment Using the BioGears
+    Engine
+  authors:
+  - Matthew McDaniel
+  - Austin Baird
+  publisher: 2019 41st Annual International Conference of the IEEE Engineering in
+    Medicine and Biology Society (EMBC)
+  date: '2019-07-01'
+  link: https://doi.org/gtpxsx
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
+- id: doi:10.1002/psp4.12371
+  title: 'Open Source Pharmacokinetic/Pharmacodynamic Framework: Tutorial on the BioGears
+    Engine'
+  authors:
+  - Matthew McDaniel
+  - Jennifer Carter
+  - Jonathan M Keller
+  - Steven A. White
+  - Austin Baird
+  publisher: 'CPT: Pharmacometrics &amp; Systems Pharmacology'
+  date: '2019-01-01'
+  link: https://doi.org/ggv675
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
+- id: doi:10.1093/icb/icv102
+  title: "A Mathematical Model and MATLAB Code for Muscle\u2013Fluid\u2013Structure\
+    \ Simulations"
+  authors:
+  - Nicholas A. Battista
+  - Austin J. Baird
+  - Laura A. Miller
+  publisher: Integrative and Comparative Biology
+  date: '2015-09-03'
+  link: https://doi.org/f7vdwt
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
+- id: doi:10.1007/s13160-015-0195-3
+  title: 'Neuromechanical pumping: boundary flexibility and traveling depolarization
+    waves drive flow within valveless, tubular hearts'
+  authors:
+  - Austin Baird
+  - Lindsay Waldrop
+  - Laura Miller
+  publisher: Japan Journal of Industrial and Applied Mathematics
+  date: '2015-10-27'
+  link: https://doi.org/gtpxsz
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
+- id: doi:10.1090/conm/628/12543
+  title: Numerical Study of Scaling Effects in Peristalsis and Dynamic Suction Pumping
+  authors:
+  - A. Baird
+  - T. King
+  - L. Miller
+  publisher: 'Biological Fluid Dynamics: Modeling, Computations, and Applications'
+  date: '2014-01-01'
+  link: https://doi.org/gtpxs2
   orcid: 0000-0002-4711-3016
   plugin: orcid.py
   file: orcid.yaml
