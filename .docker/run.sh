@@ -1,5 +1,5 @@
 #! /bin/bash
-
+echo "starting run file"
 # name of image
 IMAGE=lab-website-renderer:latest
 

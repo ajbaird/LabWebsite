@@ -1,9 +1,13 @@
 ---
 ---
 
-# ajbaird's Website
+# Mathematical Models of the Human Physiological Response to Trauma
 
-An engaging 1-3 sentence description of your lab.
+We aim to leverage a variety of mathematical modeling techniques to simulate the physiological response to trauma and resuscitation. These models include deterministic and stochastic differential equations, physics-based cardiopulmonary models, and mechanistic models of system, tissue and molecular responses. We investigate ways in which data may be incorporated into these traditional modeling frameworks in creative and meaningful ways. This includes leveraging optimal control, machine learning, and various parameter fitting workflows and also investigating and rigorously validating models as they pertain to realistic resuscitation scenarios.
+
+ We aim to couple these modeling techniques to computational design and architectures that are flexible, dynamic, and reactive with robust APIs in order to deploy them in a variety of training, research, and educational applications. This includes integration of models in physical (such as real-time robotics) and virtual (such as augmented and virtual reality displays) systems.
+
+
 
 {% include section.html %}
 
@@ -11,7 +15,7 @@ An engaging 1-3 sentence description of your lab.
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Explore our work! 
 
 {%
   include button.html
@@ -26,7 +30,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/overview.png"
   link="research"
   title="Our Research"
   text=text
@@ -51,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
   include feature.html
   image="images/photo.jpg"
   link="projects"
-  title="Our Projects"
+  title="Open Source Tools"
   flip=true
   style="bare"
   text=text
