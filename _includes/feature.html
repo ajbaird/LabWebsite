@@ -8,7 +8,7 @@
     {% if include.link %}
       href="{{ include.link | relative_url }}" 
     {% endif %}
-    class="feature-image"
+    class="{{ include.className | 'feature-image' }}"
     aria-label="{{ include.title | default: "feature link" }}"
   >
     <img

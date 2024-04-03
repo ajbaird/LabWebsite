@@ -51,3 +51,8 @@ $wrap: 800px;
     max-width: calc($wrap / 2);
   }
 }
+
+// Custom
+.feature-image.icon {
+  aspect-ratio: 3 / 3;
+}
