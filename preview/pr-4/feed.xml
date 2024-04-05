@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/preview/pr-4/feed.xml" rel="self" type="application/atom+xml" /><link href="/preview/pr-4/" rel="alternate" type="text/html" /><updated>2024-04-05T00:09:03+00:00</updated><id>/preview/pr-4/feed.xml</id><title type="html">Baird Lab - Modeling + Data + Computation</title><subtitle>Modeling + Data + Computation</subtitle><entry><title type="html">BioGears UI on a Mac</title><link href="/preview/pr-4/2024/04/04/BioGears-UI.html" rel="alternate" type="text/html" title="BioGears UI on a Mac" /><published>2024-04-04T00:00:00+00:00</published><updated>2024-04-05T00:07:35+00:00</updated><id>/preview/pr-4/2024/04/04/BioGears-UI</id><content type="html" xml:base="/preview/pr-4/2024/04/04/BioGears-UI.html"><![CDATA[<h1 id="biogears-ui-on-a-mac">BioGears UI on a Mac</h1>
+
+<p>These instructions will mostly be taken from the following <a href="https://github.com/ajbaird/ui">link</a>.</p>
+
+<h2 id="cloning-and-building">Cloning and Building</h2>
+<p>Firs thing we want to do is fork the UI project <a href="https://github.com/ajbaird/ui">link</a>. Once you have it forked on your github page, navigate tot the repository and clone the repository into the directory structure of your choice. For this tutorial I’ll be cloning the project into <code class="language-plaintext highlighter-rouge">~/Development/BioGears/</code>.</p>
+
+<p>Once cloned we will go through building the GUI. For this to work we first need to have a built copy of BioGears to reference. The git project is structured in such a way that there is a submodule included that once initialized, will clone a copy of the BioGears code base into a <code class="language-plaintext highlighter-rouge">./extern/biogears/</code> folder.</p>
+
+<p>From the root of where you cloned the UI, for me this is <code class="language-plaintext highlighter-rouge">BioGears/ui</code>, then in the terminal type <code class="language-plaintext highlighter-rouge">git submodule init</code> then make sure you are up to date with <code class="language-plaintext highlighter-rouge">git submodule update</code> .</p>
+
+<p><img src="./biogearsExtern.png" alt="png" /></p>
+
+<p>This command will automatically clone the latest master commit from the BioGears core project. Once BioGears has been pulled from core, we need to build BioGears</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir build-biogears
+cd build-biogears
+cmake ../projectslibbiogears -DCMAKE_INSTALL_PREFIX=${PWD}../build-gui/usr 
+cmake --build . -config Release -target install 
+</code></pre></div></div>
+
+<p>This command will install to the usr folder within the user interface, all build files will be in the build-biogears folder.</p>
+
+<p><img src="/images/command.png" alt="png" /></p>
+
+<p>We also need to make sure that Qt is installed on our system. I will not cover cloning and building Qt but it is VERY important to make sure that you download and install Qt version 5.12, otherwise the BioGears UI will not work.</p>
+
+<p>Now that we have BioGears AND Qt 5.12 installed, we are ready to install the UI, first we want to configure the project using cmake. The easiest way to do this is to navigate to the build directory with the cmake GUI:</p>
+
+<p><img src="/images/cmake.png" alt="png" /></p>
+
+<p>Now we need to configure cmake prefix path to be set to where the BioGears core libs are located. We can do this via the command line, or you can set them in the cmakeLists.txt file. For my use, I’m going to open this file in VS code, then append the prefix path to include the BioGears libs, as well as where the Qt install is (this is only if Qt is not included in your environment paths):</p>
+
+<p><img src="/images/SetPrefixPaths.png" alt="png" /></p>
+
+<p><strong>Note:</strong> If you are not using VS code you can set the prefix paths either through the cmake UI, OR via the command line.</p>
+
+<p>Now everything should be ready to run. If you are using VS code and have installed the cmake third party support, you should be able to run the configure command at the bottom of the screen, make sure that you set the compiler for your system (here I’m using clang, via mac). BioGears should build for most modern c++ compilers. Here is an example of my configuration at the bottom of the VS code UI:</p>
+
+<p><img src="/images/config.png" alt="png" /></p>
+
+<p>Note to make sure that you have a build folder either created with cmake, or create it yourself via the command line or explorer window. Now you can configure the project. Using VS code you can do this by clicking the cmake button and selecting “Release”</p>
+
+<p><img src="/images/cmakeConfig.png" alt="png" /></p>
+
+<p>Now going left to right, click the “build” button, this should begin the build for the set configuration. When you click this button it will build all available targets, if you only want to build one target (say the UI) and not the scenario executor (a core biogears executable) then click the button just to the right of “build” and select the target you are interested in. Everything should compile correctly and there should be a note on where the executable is located:</p>
+
+<p><img src="/images/buildUI.png" alt="png" /></p>
+
+<p>Now double check that all of the executables are built and in the appropriate folder, they should be located in the /bin folder under releases, you can see if you select the project to build “all” there will be the command line utilities and scenario executor in that folder as well as the UI:</p>
+
+<p><img src="/images/files.png" alt="png" /></p>
+
+<p>Now lets test and run the application. In order to do this, there is one last thing that we need to do. First, navigate to where the BioGears core runtime directory is, for me its <code class="language-plaintext highlighter-rouge">./ui/build-biogears/runtime</code> basically it will be anywhere you built the biogears dependencies. Copy the contents of that folder and drop it into the <code class="language-plaintext highlighter-rouge">./ui/build/Release/bin</code> folder. Now that folder should have a lot of content:</p>
+
+<p><img src="/images/bin.png" alt="png" /></p>
+
+<p>Once completed you should be able to now click the play arrow in VS studio and have the UI launch!</p>
+
+<p><img src="/images/final.png" alt="png" /></p>
+
+<p>If you have other issues while building, feel free to post a comment on the community pages (<a href="https://github.com/BioGearsEngine/ui/issues">link</a>)!</p>]]></content><author><name>Austin-Baird</name></author><category term="biology" /><category term="medicine" /><category term="opensource" /><summary type="html"><![CDATA[BioGears UI on a Mac]]></summary></entry><entry><title type="html">Building and running BioGears on a MacOS</title><link href="/preview/pr-4/2024/04/04/Building-Biogears-Mac.html" rel="alternate" type="text/html" title="Building and running BioGears on a MacOS" /><published>2024-04-04T00:00:00+00:00</published><updated>2024-04-05T00:07:35+00:00</updated><id>/preview/pr-4/2024/04/04/Building-Biogears-Mac</id><content type="html" xml:base="/preview/pr-4/2024/04/04/Building-Biogears-Mac.html"><![CDATA[<h1 id="biogears-on-a-mac">BioGears on a Mac</h1>
+
+<p>These instructions will mostly be taken from the following <a href="https://github.com/BioGearsEngine/core/wiki/MacOS-10.13-llvm-9.1-x86_64-apple-darwin17">link</a>.</p>
+
+<h2 id="cloning-and-building">Cloning and Building</h2>
+<p>To begin create a suitable directory where you’d like the code to reside. For this example, I’ll be cloning and building BioGears in <code class="language-plaintext highlighter-rouge">~/BioGears/Core</code> directory. To perform all of this work we will be using brew package manager. To access brew, on the command line paste in the follow text <code class="language-plaintext highlighter-rouge">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+
+<p>Once you have a directory and the package manager set up, navigate to that newly created directory through the command line and copy the clone <a href="https://github.com/BioGearsEngine/core.git">link</a> on github. From this directory we will install all the dependencies needed to begin running and using BioGears. To proceed copy and past the following code (to install requirements)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install wget
+brew install git
+brew install ninja
+brew  install g++
+brew  install gcc
+brew  install eigen
+brew  install log4cpp
+brew  install xerces-c
+brew install xsd
+</code></pre></div></div>
+
+<p>Navigate the core folder (for me, <code class="language-plaintext highlighter-rouge">~/Development/BioGears/Core/core</code>) and create a build directory <code class="language-plaintext highlighter-rouge">mkdir build</code>. Next, navigate to that build folder. We will now go through a series a cmake commands to set up the build configuration. We will make a few assumptions; first, we will assume that our install directory will be <code class="language-plaintext highlighter-rouge">opt/biogears/usr</code>. We will then link a prefix path. Now from the build folder we can type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX=/opt/biogears/usr \
+                 -DCMAKE_PREFIX_PATH='/usr/local/opt \
+                 -DBiogears_BUILD_JAVATOOLS=OFF \ 
+                 ..
+</code></pre></div></div>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>If it isn’t present you might have forgotten the ‘..’ at the end of the command chain above. 
+To fix this issue back out to the top directory, for me this will be Core. From Core use the rm command to remove the cloned directory<code class="language-plaintext highlighter-rouge">--- BioGears/Core » rm -rf core</code>  then re-clone BioGears: <code class="language-plaintext highlighter-rouge">--- BioGears/Core » git clone https://github.com/BioGearsEngine/core.git core</code> then create the build folder, navigate to the build folder and re-run the cmake command above. <code class="language-plaintext highlighter-rouge">--- BioGears/Core/core/build » cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX=/opt/biogears/usr -DCMAKE_PREFIX_PATH='/usr/local/opt' -DBiogears_BUILD_JAVATOOLS=OFF ..</code></p>
+
+<p>Hopefully this will create the required file.</p>
+
+<h2 id="building-and-testing-scenario-driver">Building and Testing Scenario Driver</h2>
+
+<p>Now from the build folder, we can build the scenario driver executable. This program creates a serializes in a scenario file, creates a BioGears engine and then pushes actions and data calls to the engine. Its a great place to start understanding how to use BioGears and what the engine is capable of.</p>
+
+<p>To build the scenario driver, simply type (from the build folder) <code class="language-plaintext highlighter-rouge">--- BioGears/Core/core/build » ninja scenario_driver</code>, now lets run the scenario driver to test that it’s working correctly. First navigate to the runtime directory (if there isn’t a generated runtime directory type <code class="language-plaintext highlighter-rouge">cmake STAGE</code> from the build directory). From the runtime directory type <code class="language-plaintext highlighter-rouge">../outputs/Release/bin/scenario_driver ./Scenarios/Patient/BasicStandard.xml</code></p>
+
+<p>To confirm that this file ran, navigate to the ./Scenarios/Patient folder and confirm that there is a BasicStandard.log and BasicStandardResults.csv file. Feel free to look at the log and associated xml, log, and csv files to figure out the structure of a scenario run and how the outputs reflect what you input into the .xml.</p>
+
+<h2 id="configuring-xcode-build">Configuring Xcode Build</h2>
+
+<p>To configure a build that generates an Xcode project, make a new build folder in core, called <code class="language-plaintext highlighter-rouge">core/buildXcode</code>, then in the cmake GUI set up the configuration step as shown in the image:</p>
+
+<p><img src="/images/cmake1.png" alt="png" /></p>
+
+<p>After you configure the where the source code is and where the build files will be generated (top two lines) as seen in the image. Click the configure button and select Xcode from the generators list that will pop up. There should be no errors, if there are you might need to re-install some of the binaries. Next, click generate, there will be some red text but this step should still finish. Next, click open project and the project should be launched in Xcode. In the next image you can see the folder structure and the Cardiovascular.cpp file which houses all models associated with BioGears cardiovascular system.</p>
+
+<p><img src="/images/xcodeProj.png" alt="png" /></p>
+
+<p>You might want to be able to build BioGears targets through the XCode UI. In that case simply configure a scheme. For this example click the scheme button in the top left page, the in the drop down select ALL_BUILD. This will build all the CMAKE targets that are defined. This is good if you want to begin to reference the HowTo files to start making your own application with BioGears! Once the scheme is configured just hit the play button to begin building the ALL_BUILD target. NOTE: there will be a LOT of warnings, but there shouldn’t be any errors.</p>
+
+<p><img src="/images/xcodeBuild.png" alt="png" /></p>
+
+<p>To confirm that the build worked, there should be a newly generated buildxcode folder that was generated (this is different from the one that we had cmake generate, mostly to differentiate between the two build systems). From there confirm that <code class="language-plaintext highlighter-rouge">buildxcode/runtime</code> folder. This folder houses all the extra files that are needed for BioGears to run! Confirm that there is a bunch of stuff in this folder (mostly .xml and .config files). Then we can confirm that some of our other projects built, specifically we want to confirm that the HowTo files compiled. Navigate to the where all built binaries are stored. For me, building debug targets, they are located in <code class="language-plaintext highlighter-rouge">/Users/abaird/Development/BioGears/Core/core/buildxcode/outputs/Debug/bin</code>. Your bin should look like below for reference:</p>
+
+<p><img src="/images/bin.png" alt="png" /></p>
+
+<p>If you have other issues while building, feel free to post a comment on the community pages (<a href="https://github.com/BioGearsEngine/core/issues">link</a>)!</p>]]></content><author><name>Austin-Baird</name></author><category term="biology" /><category term="medicine" /><category term="opensource" /><summary type="html"><![CDATA[BioGears on a Mac]]></summary></entry></feed>
