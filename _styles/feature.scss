@@ -13,7 +13,7 @@ $wrap: 800px;
 
 .feature-image {
   flex-shrink: 0;
-  width: 40%;
+  width: 20%;
   aspect-ratio: 3 / 2;
   border-radius: var(--rounded);
   overflow: hidden;
@@ -50,4 +50,9 @@ $wrap: 800px;
     width: unset;
     max-width: calc($wrap / 2);
   }
+}
+
+// Custom
+.feature-image.icon {
+  aspect-ratio: 2 / 2;
 }

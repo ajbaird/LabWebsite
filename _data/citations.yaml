@@ -211,8 +211,6 @@
     within the BioGears framework.
   image: https://www.frontiersin.org/files/Articles/470546/fphys-10-01321-HTML/image_m/fphys-10-01321-g003.jpg
   buttons:
-  - type: manubot
-    link: https://greenelab.github.io/meta-review/
   - type: source
     text: Manuscript Source
     link: https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2019.01321/full
@@ -223,32 +221,5 @@
   - Sepsis
   - BioGears
   repo: BioGearsEngine/core
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.1016/j.csbj.2020.05.017
-  title: Constructing knowledge graphs and their biomedical applications
-  authors:
-  - David N. Nicholson
-  - Casey S. Greene
-  publisher: Computational and Structural Biotechnology Journal
-  date: '2020-01-01'
-  link: https://doi.org/gg7m48
-  image: https://ars.els-cdn.com/content/image/1-s2.0-S2001037020302804-gr1.jpg
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.7554/eLife.32822
-  title: Sci-Hub provides access to nearly all scholarly literature
-  authors:
-  - Daniel S Himmelstein
-  - Ariel Rodriguez Romero
-  - Jacob G Levernier
-  - Thomas Anthony Munro
-  - Stephen Reid McLaughlin
-  - Bastian Greshake Tzovaras
-  - Casey S Greene
-  publisher: eLife
-  date: '2018-03-01'
-  link: https://doi.org/ckcj
-  image: https://iiif.elifesciences.org/lax:32822%2Felife-32822-fig8-v3.tif/full/863,/0/default.webp
   plugin: sources.py
   file: sources.yaml

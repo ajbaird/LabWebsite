@@ -4,8 +4,6 @@
   date: 2019-10-1
   image: https://www.frontiersin.org/files/Articles/470546/fphys-10-01321-HTML/image_m/fphys-10-01321-g003.jpg
   buttons:
-    - type: manubot
-      link: https://greenelab.github.io/meta-review/
     - type: source
       text: Manuscript Source
       link: https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2019.01321/full
@@ -16,9 +14,3 @@
     - Sepsis 
     - BioGears
   repo: BioGearsEngine/core
-
-- id: doi:10.1016/j.csbj.2020.05.017
-  image: https://ars.els-cdn.com/content/image/1-s2.0-S2001037020302804-gr1.jpg
-
-- id: doi:10.7554/eLife.32822
-  image: https://iiif.elifesciences.org/lax:32822%2Felife-32822-fig8-v3.tif/full/863,/0/default.webp

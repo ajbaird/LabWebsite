@@ -7,8 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-wrench" %}Projects
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+We aim to develop sophisticated open source resources with all the research we perform. In addition, to these resources we are also managing the new [Division of Healthcare Simulation Sciences](https://uwsurgery.org/divisions/healthcare-simulation-science/) [GitHub](https://github.com/DivisionofHealthcareSimulationSciences) where we aim to publish and provide resources to support the development of cutting edge simulation technologies.
 
 {% include tags.html tags="publication, resource, website" %}
 
@@ -22,6 +21,6 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
 {% include section.html %}
 
-## More
+<!-- ## More
 
-{% include list.html component="card" data="projects" filters="group: " style="small" %}
+{% include list.html component="card" data="projects" filters="group: " style="small" %} -->
