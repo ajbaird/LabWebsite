@@ -14,12 +14,12 @@
 }
 
 .card[data-style=small] {
-  width: 250px;
+  width: 300px;
 }
 
 .card-image img {
   aspect-ratio: 3/2;
-  object-fit: cover;
+  object-fit: fill;
   width: 100%;
 }
 

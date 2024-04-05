@@ -41,7 +41,7 @@
 
 <title>Blog | Baird Lab - Modeling + Data + Computation</title>
 
-<link rel="icon" href="/images/icon.png">
+<link rel="icon" href="/images/uwSurgery.jpg">
 
 <meta name="title" content="Blog">
 <meta name="description" content="UW Department of Surgery, Division of Healthcare Simulation Sciences. Modeling + Data + Computation">
@@ -74,7 +74,7 @@
     "headline": "Blog",
     "publisher": {
       "@type": "Organization",
-      "logo": { "@type": "ImageObject", "url": "/images/icon.png" }
+      "logo": { "@type": "ImageObject", "url": "/images/uwSurgery.jpg" }
     },
     "url": ""
   }
@@ -412,7 +412,7 @@
       
     
       
-        <a href="/blog/" data-tooltip="Musings and miscellany">
+        <a href="/blog/" data-tooltip="Musings">
           Blog
         </a>
       
@@ -450,8 +450,7 @@
     <h1 id="blog">
 <i class="icon fa-solid fa-feather-pointed"></i>Blog</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Hoping to provide help and assistance with various topics that I find interesting. Hopefully some of these posts help people through tough subjects!</p>
   </section>
 
   
@@ -482,29 +481,49 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
         medicine
       </a>
     
-      <a href="/blog/?search=%22tag:%20big%20data%22" class="tag" data-tooltip='Show items with the tag "big data"'>
-        big data
+      <a href="/blog/?search=%22tag:%20opensource%22" class="tag" data-tooltip='Show items with the tag "opensource"'>
+        opensource
       </a>
     
   </div>
 
 <div class="search-info"></div>
 
-<h3 id="2023">2023</h3>
-
 <div class="post-excerpt">
   
   
-  <a href="/2023/02/23/example-post-3.html">Example post 3</a>
+  <a href="/2024/04/04/Building-Biogears-Mac.html">Building and running BioGears on a MacOS</a>
 
   <div class="post-info">
   
     
     
-      <span data-tooltip="Author">
-        <i class="icon fa-solid fa-feather-pointed"></i>
-        <span>john-doe</span>
+      
+
+<div class="portrait-wrapper">
+  <a href="/members/Austin-Baird.html" class="portrait" data-style="tiny" aria-label="Austin Baird">
+    <img src="/images/headshot.jpeg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-text">
+        
+          <span class="portrait-name">
+            Austin Baird
+          </span>
+        
+
+        
+          <span class="portrait-role">
+            
+            <i class="icon fa-solid fa-microscope"></i>
+            <span>Principal Investigator</span>
+          </span>
+        
       </span>
+    
+  </a>
+</div>
+
     
   
 
@@ -514,14 +533,14 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
   
     <span data-tooltip="Originally published on">
       <i class="icon fa-regular fa-calendar"></i>
-      <span>February 23, 2023</span>
+      <span>April 04, 2024</span>
     </span>
   
 
   
     <span data-tooltip="Last updated on">
       <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>April 02, 2024</span>
+      <span>April 05, 2024</span>
     </span>
   
 </div>
@@ -540,6 +559,10 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
         medicine
       </a>
     
+      <a href="/blog?search=%22tag:%20opensource%22" class="tag" data-tooltip='Show items with the tag "opensource"'>
+        opensource
+      </a>
+    
   </div>
 
 
@@ -548,27 +571,47 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
   
   
-  <p data-search="Lorem ipsum dolor sit amet  consectetur adipiscing elit  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <p data-search="BioGears on a MacThese instructions will mostly be taken from the following link Cloning and BuildingTo begin create a suitable directory where you d like the code to reside  For this example  I ll be cloning and building BioGears in   BioGears Core directory  To perform all of this work we will be using brew package manager  To access brew  on the command line paste in the follow text  usr bin ruby  e    curl  fsSL https   raw githubusercontent com Homebrew install master install  Once you have a directory and the package manager set up  navigate to that newly created directory through the command line and copy the clone link on github  From this directory we will install all the dependencies needed to begin running and using BioGears  To proceed copy and past the following code  to install requirements brew install wgetbrew install gitbrew install ninjabrew  install g  brew  install gccbrew  install eigenbrew  install log4cppbrew  install xerces cbrew install xsdNavigate the core folder  for me    Development BioGears Core core  and create a build directory mkdir build  Next  navigate to that build folder  We will now go through a series a cmake commands to set up the build configuration  We will make a few assumptions  first  we will assume that our install directory will be opt biogears usr  We will then link a prefix path  Now from the build folder we can type cmake  G  Ninja   DCMAKE INSTALL PREFIX  opt biogears usr                    DCMAKE PREFIX PATH   usr local opt                    DBiogears BUILD JAVATOOLS OFF                      DebuggingIf it isn t present you might have forgotten the      at the end of the command chain above  To fix this issue back out to the top directory  for me this will be Core  From Core use the rm command to remove the cloned directory    BioGears Core   rm  rf core  then re clone BioGears      BioGears Core   git clone https   github com BioGearsEngine core git core then create the build folder  navigate to the build folder and re run the cmake command above      BioGears Core core build   cmake  G  Ninja   DCMAKE INSTALL PREFIX  opt biogears usr  DCMAKE PREFIX PATH   usr local opt   DBiogears BUILD JAVATOOLS OFF   Hopefully this will create the required file Building and Testing Scenario DriverNow from the build folder  we can build the scenario driver executable  This program creates a serializes in a scenario file  creates a BioGears engine and then pushes actions and data calls to the engine  Its a great place to start understanding how to use BioGears and what the engine is capable of To build the scenario driver  simply type  from the build folder      BioGears Core core build   ninja scenario driver  now lets run the scenario driver to test that it s working correctly  First navigate to the runtime directory  if there isn t a generated runtime directory type cmake STAGE from the build directory   From the runtime directory type    outputs Release bin scenario driver   Scenarios Patient BasicStandard xmlTo confirm that this file ran  navigate to the   Scenarios Patient folder and confirm that there is a BasicStandard log and BasicStandardResults csv file  Feel free to look at the log and associated xml  log  and csv files to figure out the structure of a scenario run and how the outputs reflect what you input into the  xml Configuring Xcode BuildTo configure a build that generates an Xcode project  make a new build folder in core  called core buildXcode  then in the cmake GUI set up the configuration step as shown in the image After you configure the where the source code is and where the build files will be generated  top two lines  as seen in the image  Click the configure button and select Xcode from the generators list that will pop up  There should be no errors  if there are you might need to re install some of the binaries  Next  click generate  there will be some red text but this step should still finish  Next  click open project and the project should be launched in Xcode  In the next image you can see the folder structure and the Cardiovascular cpp file which houses all models associated with BioGears cardiovascular system You might want to be able to build BioGears targets through the XCode UI  In that case simply configure a scheme  For this example click the scheme button in the top left page  the in the drop down select ALL BUILD  This will build all the CMAKE targets that are defined  This is good if you want to begin to reference the HowTo files to start making your own application with BioGears  Once the scheme is configured just hit the play button to begin building the ALL BUILD target  NOTE  there will be a LOT of warnings  but there shouldn t be any errors To confirm that the build worked  there should be a newly generated buildxcode folder that was generated  this is different from the one that we had cmake generate  mostly to differentiate between the two build systems   From there confirm that buildxcode runtime folder  This folder houses all the extra files that are needed for BioGears to run  Confirm that there is a bunch of stuff in this folder  mostly  xml and  config files   Then we can confirm that some of our other projects built  specifically we want to confirm that the HowTo files compiled  Navigate to the where all built binaries are stored  For me  building debug targets  they are located in  Users abaird Development BioGears Core core buildxcode outputs Debug bin  Your bin should look like below for reference If you have other issues while building  feel free to post a comment on the community pages  link  ">
+    BioGears on a Mac
 
   </p>
 </div>
 
-<h3 id="2021">2021</h3>
-
 <div class="post-excerpt">
   
   
-  <a href="/2021/09/30/example-post-2.html">Example post 2</a>
+  <a href="/2024/04/04/BioGears-UI.html">BioGears UI on a Mac</a>
 
   <div class="post-info">
   
     
     
-      <span data-tooltip="Author">
-        <i class="icon fa-solid fa-feather-pointed"></i>
-        <span>jane-smith</span>
+      
+
+<div class="portrait-wrapper">
+  <a href="/members/Austin-Baird.html" class="portrait" data-style="tiny" aria-label="Austin Baird">
+    <img src="/images/headshot.jpeg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-text">
+        
+          <span class="portrait-name">
+            Austin Baird
+          </span>
+        
+
+        
+          <span class="portrait-role">
+            
+            <i class="icon fa-solid fa-microscope"></i>
+            <span>Principal Investigator</span>
+          </span>
+        
       </span>
+    
+  </a>
+</div>
+
     
   
 
@@ -578,66 +621,14 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
   
     <span data-tooltip="Originally published on">
       <i class="icon fa-regular fa-calendar"></i>
-      <span>September 30, 2021</span>
+      <span>April 04, 2024</span>
     </span>
   
 
   
     <span data-tooltip="Last updated on">
       <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>April 02, 2024</span>
-    </span>
-  
-</div>
-
-
-  
-
-
-
-
-
-
-  
-  
-  <p data-search="Lorem ipsum dolor sit amet  consectetur adipiscing elit  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-  </p>
-</div>
-
-<h3 id="2019">2019</h3>
-
-<div class="post-excerpt">
-  
-  
-  <a href="/2019/01/07/example-post-1.html">Example post 1</a>
-
-  <div class="post-info">
-  
-    
-    
-      <span data-tooltip="Author">
-        <i class="icon fa-solid fa-feather-pointed"></i>
-        <span>sarah-johnson</span>
-      </span>
-    
-  
-
-  
-  
-
-  
-    <span data-tooltip="Originally published on">
-      <i class="icon fa-regular fa-calendar"></i>
-      <span>January 07, 2019</span>
-    </span>
-  
-
-  
-    <span data-tooltip="Last updated on">
-      <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>April 02, 2024</span>
+      <span>April 05, 2024</span>
     </span>
   
 </div>
@@ -656,8 +647,8 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
         medicine
       </a>
     
-      <a href="/blog?search=%22tag:%20big%20data%22" class="tag" data-tooltip='Show items with the tag "big data"'>
-        big data
+      <a href="/blog?search=%22tag:%20opensource%22" class="tag" data-tooltip='Show items with the tag "opensource"'>
+        opensource
       </a>
     
   </div>
@@ -668,8 +659,8 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 
   
   
-  <p data-search="Lorem ipsum dolor sit amet  consectetur adipiscing elit  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  <p data-search="BioGears UI on a MacThese instructions will mostly be taken from the following link Cloning and BuildingFirs thing we want to do is fork the UI project link  Once you have it forked on your github page  navigate tot the repository and clone the repository into the directory structure of your choice  For this tutorial I ll be cloning the project into   Development BioGears  Once cloned we will go through building the GUI  For this to work we first need to have a built copy of BioGears to reference  The git project is structured in such a way that there is a submodule included that once initialized  will clone a copy of the BioGears code base into a   extern biogears  folder From the root of where you cloned the UI  for me this is BioGears ui  then in the terminal type git submodule init then make sure you are up to date with git submodule update  This command will automatically clone the latest master commit from the BioGears core project  Once BioGears has been pulled from core  we need to build BioGearsmkdir build biogearscd build biogearscmake    projectslibbiogears  DCMAKE INSTALL PREFIX   PWD    build gui usr cmake   build    config Release  target install This command will install to the usr folder within the user interface  all build files will be in the build biogears folder We also need to make sure that Qt is installed on our system  I will not cover cloning and building Qt but it is VERY important to make sure that you download and install Qt version 5 12  otherwise the BioGears UI will not work Now that we have BioGears AND Qt 5 12 installed  we are ready to install the UI  first we want to configure the project using cmake  The easiest way to do this is to navigate to the build directory with the cmake GUI Now we need to configure cmake prefix path to be set to where the BioGears core libs are located  We can do this via the command line  or you can set them in the cmakeLists txt file  For my use  I m going to open this file in VS code  then append the prefix path to include the BioGears libs  as well as where the Qt install is  this is only if Qt is not included in your environment paths  Note  If you are not using VS code you can set the prefix paths either through the cmake UI  OR via the command line Now everything should be ready to run  If you are using VS code and have installed the cmake third party support  you should be able to run the configure command at the bottom of the screen  make sure that you set the compiler for your system  here I m using clang  via mac   BioGears should build for most modern c   compilers  Here is an example of my configuration at the bottom of the VS code UI Note to make sure that you have a build folder either created with cmake  or create it yourself via the command line or explorer window  Now you can configure the project  Using VS code you can do this by clicking the cmake button and selecting  Release Now going left to right  click the  build  button  this should begin the build for the set configuration  When you click this button it will build all available targets  if you only want to build one target  say the UI  and not the scenario executor  a core biogears executable  then click the button just to the right of  build  and select the target you are interested in  Everything should compile correctly and there should be a note on where the executable is located Now double check that all of the executables are built and in the appropriate folder  they should be located in the  bin folder under releases  you can see if you select the project to build  all  there will be the command line utilities and scenario executor in that folder as well as the UI Now lets test and run the application  In order to do this  there is one last thing that we need to do  First  navigate to where the BioGears core runtime directory is  for me its   ui build biogears runtime basically it will be anywhere you built the biogears dependencies  Copy the contents of that folder and drop it into the   ui build Release bin folder  Now that folder should have a lot of content Once completed you should be able to now click the play arrow in VS studio and have the UI launch If you have other issues while building  feel free to post a comment on the community pages  link  ">
+    BioGears UI on a Mac
 
   </p>
 </div>

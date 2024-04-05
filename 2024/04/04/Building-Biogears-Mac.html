@@ -39,33 +39,33 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Example post 3 | Baird Lab - Modeling + Data + Computation</title>
+<title>Building and running BioGears on a MacOS | Baird Lab - Modeling + Data + Computation</title>
 
-<link rel="icon" href="/images/icon.png">
+<link rel="icon" href="/images/uwSurgery.jpg">
 
-<meta name="title" content="Example post 3">
+<meta name="title" content="Building and running BioGears on a MacOS">
 <meta name="description" content="UW Department of Surgery, Division of Healthcare Simulation Sciences. Modeling + Data + Computation">
 
-<meta property="og:title" content="Example post 3">
+<meta property="og:title" content="Building and running BioGears on a MacOS">
 <meta property="og:site_title" content="Baird Lab - Modeling + Data + Computation">
 <meta property="og:description" content="UW Department of Surgery, Division of Healthcare Simulation Sciences. Modeling + Data + Computation">
 <meta property="og:url" content="">
 <meta property="og:image" content="/images/share.jpg">
 <meta property="og:locale" content="en_US">
 
-<meta property="twitter:title" content="Example post 3">
+<meta property="twitter:title" content="Building and running BioGears on a MacOS">
 <meta property="twitter:description" content="UW Department of Surgery, Division of Healthcare Simulation Sciences. Modeling + Data + Computation">
 <meta property="twitter:url" content="">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:image" content="/images/share.jpg">
 
 
-  <meta name="author" content="john-doe">
+  <meta name="author" content="Austin-Baird">
   <meta property="og:type" content="article">
-  <meta property="og:updated_time" content="2024-04-02T23:01:37+00:00">
-  <meta property="article:published_time" content="2023-02-23T00:00:00+00:00">
-  <meta property="article:modified_time" content="2024-04-02T23:01:37+00:00">
-  <meta name="revised" content="2024-04-02T23:01:37+00:00">
+  <meta property="og:updated_time" content="2024-04-05T00:08:29+00:00">
+  <meta property="article:published_time" content="2024-04-04T00:00:00+00:00">
+  <meta property="article:modified_time" content="2024-04-05T00:08:29+00:00">
+  <meta name="revised" content="2024-04-05T00:08:29+00:00">
 
 
 <script type="application/ld+json">
@@ -73,16 +73,16 @@
     "@context": "https://schema.org",
     
       "@type": "BlogPosting",
-      "author": { "@type": "Person", "name": "Example post 3" },
-      "datePublished": "2023-02-23T00:00:00+00:00",
-      "dateModified": "2024-04-02T23:01:37+00:00",
+      "author": { "@type": "Person", "name": "Building and running BioGears on a MacOS" },
+      "datePublished": "2024-04-04T00:00:00+00:00",
+      "dateModified": "2024-04-05T00:08:29+00:00",
     
-    "name": "Example post 3",
+    "name": "Building and running BioGears on a MacOS",
     "description": "UW Department of Surgery, Division of Healthcare Simulation Sciences. Modeling + Data + Computation",
-    "headline": "Example post 3",
+    "headline": "Building and running BioGears on a MacOS",
     "publisher": {
       "@type": "Organization",
-      "logo": { "@type": "ImageObject", "url": "/images/icon.png" }
+      "logo": { "@type": "ImageObject", "url": "/images/uwSurgery.jpg" }
     },
     "url": ""
   }
@@ -368,7 +368,7 @@
       
     
       
-        <a href="/blog/" data-tooltip="Musings and miscellany">
+        <a href="/blog/" data-tooltip="Musings">
           Blog
         </a>
       
@@ -403,16 +403,38 @@
   
 
   <section class="background" data-size="page">
-    <h1 class="center">Example post 3</h1>
+    <h1 class="center">Building and running BioGears on a MacOS</h1>
 
 <div class="post-info">
   
     
     
-      <span data-tooltip="Author">
-        <i class="icon fa-solid fa-feather-pointed"></i>
-        <span>john-doe</span>
+      
+
+<div class="portrait-wrapper">
+  <a href="/members/Austin-Baird.html" class="portrait" data-style="tiny" aria-label="Austin Baird">
+    <img src="/images/headshot.jpeg" class="portrait-image" alt="member portrait" loading="lazy" onerror="this.src = '/images/fallback.svg'; this.onerror = null;">
+
+    
+      <span class="portrait-text">
+        
+          <span class="portrait-name">
+            Austin Baird
+          </span>
+        
+
+        
+          <span class="portrait-role">
+            
+            <i class="icon fa-solid fa-microscope"></i>
+            <span>Principal Investigator</span>
+          </span>
+        
       </span>
+    
+  </a>
+</div>
+
     
   
 
@@ -422,14 +444,14 @@
   
     <span data-tooltip="Originally published on">
       <i class="icon fa-regular fa-calendar"></i>
-      <span>February 23, 2023</span>
+      <span>April 04, 2024</span>
     </span>
   
 
   
     <span data-tooltip="Last updated on">
       <i class="icon fa-solid fa-clock-rotate-left"></i>
-      <span>April 02, 2024</span>
+      <span>April 05, 2024</span>
     </span>
   
 </div>
@@ -448,6 +470,10 @@
         medicine
       </a>
     
+      <a href="/blog?search=%22tag:%20opensource%22" class="tag" data-tooltip='Show items with the tag "opensource"'>
+        opensource
+      </a>
+    
   </div>
   </section>
 
@@ -463,7 +489,68 @@
 -->
 
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<h1 id="biogears-on-a-mac">BioGears on a Mac</h1>
+
+<p>These instructions will mostly be taken from the following <a href="https://github.com/BioGearsEngine/core/wiki/MacOS-10.13-llvm-9.1-x86_64-apple-darwin17">link</a>.</p>
+
+<h2 id="cloning-and-building">Cloning and Building</h2>
+<p>To begin create a suitable directory where you’d like the code to reside. For this example, I’ll be cloning and building BioGears in <code class="language-plaintext highlighter-rouge">~/BioGears/Core</code> directory. To perform all of this work we will be using brew package manager. To access brew, on the command line paste in the follow text <code class="language-plaintext highlighter-rouge">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+
+<p>Once you have a directory and the package manager set up, navigate to that newly created directory through the command line and copy the clone <a href="https://github.com/BioGearsEngine/core.git">link</a> on github. From this directory we will install all the dependencies needed to begin running and using BioGears. To proceed copy and past the following code (to install requirements)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install wget
+brew install git
+brew install ninja
+brew  install g++
+brew  install gcc
+brew  install eigen
+brew  install log4cpp
+brew  install xerces-c
+brew install xsd
+</code></pre></div></div>
+
+<p>Navigate the core folder (for me, <code class="language-plaintext highlighter-rouge">~/Development/BioGears/Core/core</code>) and create a build directory <code class="language-plaintext highlighter-rouge">mkdir build</code>. Next, navigate to that build folder. We will now go through a series a cmake commands to set up the build configuration. We will make a few assumptions; first, we will assume that our install directory will be <code class="language-plaintext highlighter-rouge">opt/biogears/usr</code>. We will then link a prefix path. Now from the build folder we can type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX=/opt/biogears/usr \
+                 -DCMAKE_PREFIX_PATH='/usr/local/opt \
+                 -DBiogears_BUILD_JAVATOOLS=OFF \ 
+                 ..
+</code></pre></div></div>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>If it isn’t present you might have forgotten the ‘..’ at the end of the command chain above. 
+To fix this issue back out to the top directory, for me this will be Core. From Core use the rm command to remove the cloned directory<code class="language-plaintext highlighter-rouge">--- BioGears/Core » rm -rf core</code>  then re-clone BioGears: <code class="language-plaintext highlighter-rouge">--- BioGears/Core » git clone https://github.com/BioGearsEngine/core.git core</code> then create the build folder, navigate to the build folder and re-run the cmake command above. <code class="language-plaintext highlighter-rouge">--- BioGears/Core/core/build » cmake -G "Ninja" -DCMAKE_INSTALL_PREFIX=/opt/biogears/usr -DCMAKE_PREFIX_PATH='/usr/local/opt' -DBiogears_BUILD_JAVATOOLS=OFF ..</code></p>
+
+<p>Hopefully this will create the required file.</p>
+
+<h2 id="building-and-testing-scenario-driver">Building and Testing Scenario Driver</h2>
+
+<p>Now from the build folder, we can build the scenario driver executable. This program creates a serializes in a scenario file, creates a BioGears engine and then pushes actions and data calls to the engine. Its a great place to start understanding how to use BioGears and what the engine is capable of.</p>
+
+<p>To build the scenario driver, simply type (from the build folder) <code class="language-plaintext highlighter-rouge">--- BioGears/Core/core/build » ninja scenario_driver</code>, now lets run the scenario driver to test that it’s working correctly. First navigate to the runtime directory (if there isn’t a generated runtime directory type <code class="language-plaintext highlighter-rouge">cmake STAGE</code> from the build directory). From the runtime directory type <code class="language-plaintext highlighter-rouge">../outputs/Release/bin/scenario_driver ./Scenarios/Patient/BasicStandard.xml</code></p>
+
+<p>To confirm that this file ran, navigate to the ./Scenarios/Patient folder and confirm that there is a BasicStandard.log and BasicStandardResults.csv file. Feel free to look at the log and associated xml, log, and csv files to figure out the structure of a scenario run and how the outputs reflect what you input into the .xml.</p>
+
+<h2 id="configuring-xcode-build">Configuring Xcode Build</h2>
+
+<p>To configure a build that generates an Xcode project, make a new build folder in core, called <code class="language-plaintext highlighter-rouge">core/buildXcode</code>, then in the cmake GUI set up the configuration step as shown in the image:</p>
+
+<p><img src="/images/cmake1.png" alt="png"></p>
+
+<p>After you configure the where the source code is and where the build files will be generated (top two lines) as seen in the image. Click the configure button and select Xcode from the generators list that will pop up. There should be no errors, if there are you might need to re-install some of the binaries. Next, click generate, there will be some red text but this step should still finish. Next, click open project and the project should be launched in Xcode. In the next image you can see the folder structure and the Cardiovascular.cpp file which houses all models associated with BioGears cardiovascular system.</p>
+
+<p><img src="/images/xcodeProj.png" alt="png"></p>
+
+<p>You might want to be able to build BioGears targets through the XCode UI. In that case simply configure a scheme. For this example click the scheme button in the top left page, the in the drop down select ALL_BUILD. This will build all the CMAKE targets that are defined. This is good if you want to begin to reference the HowTo files to start making your own application with BioGears! Once the scheme is configured just hit the play button to begin building the ALL_BUILD target. NOTE: there will be a LOT of warnings, but there shouldn’t be any errors.</p>
+
+<p><img src="/images/xcodeBuild.png" alt="png"></p>
+
+<p>To confirm that the build worked, there should be a newly generated buildxcode folder that was generated (this is different from the one that we had cmake generate, mostly to differentiate between the two build systems). From there confirm that <code class="language-plaintext highlighter-rouge">buildxcode/runtime</code> folder. This folder houses all the extra files that are needed for BioGears to run! Confirm that there is a bunch of stuff in this folder (mostly .xml and .config files). Then we can confirm that some of our other projects built, specifically we want to confirm that the HowTo files compiled. Navigate to the where all built binaries are stored. For me, building debug targets, they are located in <code class="language-plaintext highlighter-rouge">/Users/abaird/Development/BioGears/Core/core/buildxcode/outputs/Debug/bin</code>. Your bin should look like below for reference:</p>
+
+<p><img src="/images/bin.png" alt="png"></p>
+
+<p>If you have other issues while building, feel free to post a comment on the community pages (<a href="https://github.com/BioGearsEngine/core/issues">link</a>)!</p>
   </section>
 
   
@@ -482,8 +569,8 @@
   <span>
     
       <i class="icon fa-solid fa-angle-left"></i> Previous post<br>
-      <a href="/2021/09/30/example-post-2.html">
-        Example post 2
+      <a href="/2024/04/04/BioGears-UI.html">
+        BioGears UI on a Mac
       </a>
     
   </span>
