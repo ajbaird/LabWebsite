@@ -1,22 +1,20 @@
-- title: Cool Dataset
-  subtitle: a subtitle
+- title: BioGears Physiology Engine
+  subtitle: A dynamic whole-body model of the patient 
   group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  image: images/biogears.jpg
+  link: https://github.com/BioGearsEngine/core
+  description: C++ code base that builds a library to be used in healthcare simulation and research. BioGears has been used in many proprietary applications and continues to provide a resource to construct and investigate in-silico patient responses
   tags:
-    - resource
+    - Software
 
-- title: Cool Package
-  subtitle: a subtitle
+- title: 3D Traumatic Brain Injury Angiogenesis Model
+  subtitle: Injure a region and see the vessel growth! 
   group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  image: images/tbi.jpg
+  link: https://github.com/ajbaird/TBISimulator
+  description: A C++ code base that takes a 3D segmented .vtk files and injury location and severity as an input and uses fractal geometry to simulate the vessel growth due to the injury.
   tags:
-    - resource
+    - Software
 
 - title: Cool Tutorial
   subtitle: a subtitle
