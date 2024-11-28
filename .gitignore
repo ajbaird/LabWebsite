@@ -6,6 +6,9 @@ vendor
 debug.log
 __pycache__
 .cache
+_cite/.cache
+_cite/.cache/cache.db
+_cite/.cache/*
 !cache.db
 .DS_STORE
 .env*

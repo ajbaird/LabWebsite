@@ -1,5 +1,20 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
+- id: doi:10.1038/s43856-024-00536-5
+  title: Whole body physiology model to simulate respiratory depression of fentanyl
+    and associated naloxone reversal
+  authors:
+  - Austin Baird
+  - Steven A. White
+  - Rishi Das
+  - Nathan Tatum
+  - Erika K. Bisgaard
+  publisher: Communications Medicine
+  date: '2024-06-12'
+  link: https://doi.org/g8schg
+  orcid: 0000-0002-4711-3016
+  plugin: orcid.py
+  file: orcid.yaml
 - id: doi:10.2196/50705
   title: 'Increasing Realism and Variety of Virtual Patient Dialogues for Prenatal
     Counseling Education Through a Novel Application of ChatGPT: Exploratory Observational
@@ -189,7 +204,7 @@
   - A. Baird
   - T. King
   - L. Miller
-  publisher: 'Biological Fluid Dynamics: Modeling, Computations, and Applications'
+  publisher: Contemporary Mathematics
   date: '2014-01-01'
   link: https://doi.org/gtpxs2
   orcid: 0000-0002-4711-3016
